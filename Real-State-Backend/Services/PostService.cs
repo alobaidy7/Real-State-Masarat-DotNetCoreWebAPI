@@ -29,6 +29,17 @@ namespace Real_State_Backend.Services
             var post = _context.Posts.FirstOrDefault(p => p.Id == id);
             return post;
         }
+        public ICollection<Post> DeletePost(int id)
+        {
+            var post = _context.Posts.FirstOrDefault(p=> p.Id == id);
+            if (post == null)
+            {
+                return _context.Posts.ToList();
+            }
+            _context.Remove(post);
+            _context.SaveChanges();
+            return _context.Posts.ToList();
+        }
 
     }
 }

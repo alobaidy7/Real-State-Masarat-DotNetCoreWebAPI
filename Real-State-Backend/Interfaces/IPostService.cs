@@ -6,6 +6,7 @@ namespace Real_State_Backend.Interfaces
     {
         public ICollection<Post> GetAllPosts();
         public Post GetPostById(int id);
+        public ICollection<Post> DeletePost(int id);
 
 
     }

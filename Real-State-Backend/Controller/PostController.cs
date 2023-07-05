@@ -34,5 +34,16 @@ namespace Real_State_Backend.Controller
 
             return Ok(post);
         }
+        [HttpDelete]
+        [Route("/api/Delete")]
+        public IActionResult DeletePost(int id)
+        {
+            if(id==null)
+            {
+                return NotFound();
+            }
+            var post= _postservice.DeletePost(id);
+            return Ok(post);
+        }
     }
 }
