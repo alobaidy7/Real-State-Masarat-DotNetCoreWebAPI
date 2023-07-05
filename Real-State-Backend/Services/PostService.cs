@@ -24,6 +24,11 @@ namespace Real_State_Backend.Services
             return posts;
         }
 
-       
+        public Post GetPostById(int id)
+        {
+            var post = _context.Posts.FirstOrDefault(p => p.Id == id);
+            return post;
+        }
+
     }
 }
