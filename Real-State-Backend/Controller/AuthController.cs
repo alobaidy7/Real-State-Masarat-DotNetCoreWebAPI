@@ -27,5 +27,16 @@ namespace Real_State_Backend.Controller
 
             return await _authService.RegisterUser(user);
         }
+        [Route("/Login")]
+        [HttpPost]
+        public async Task<UserResponse> LoginUser(LoginDTO login)
+        {
+            //if (user == null)
+            //{
+
+            //}
+
+            return await _authService.LoginUser(login);
+        }
     }
 }

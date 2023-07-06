@@ -49,7 +49,7 @@ namespace Real_State_Backend.Controller
                     || string.IsNullOrEmpty(postDTO.UserId)
                     )
                 {
-                    return BadRequest("{lease Fill Required Information (Title,Price,Area,Description,UserID,Location)."); 
+                    return BadRequest("Please Fill all The Required Information (Title,Price,Area,Description,UserID,Location)."); 
                 }
 
                 var createdPost = _postservice.AddPost(postDTO);

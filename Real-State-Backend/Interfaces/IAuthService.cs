@@ -6,5 +6,9 @@ namespace Real_State_Backend.Interfaces
     public interface IAuthService
     {
         Task<UserResponse> RegisterUser(RegisterDTO user);
+        Task<UserResponse> LoginUser(LoginDTO login);
+
     }
+   
+
 }

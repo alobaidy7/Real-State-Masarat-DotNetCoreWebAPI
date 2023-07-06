@@ -32,15 +32,7 @@ namespace Real_State_Backend.Services
             var post = _context.Posts.FirstOrDefault(p => p.Id == id);
             return post;
         }
-        public Post GetPostByUserID(int id) {
-
-            if(_context.Posts.FirstOrDefault() != null)
-            {
-                var post = _context.Posts.FirstOrDefault(p => p.UserId!=null && p.UserId == p.Id);
-                return post;
-            }
-        
-        }
+       
         public Post AddPost(PostDTO postDTO)
         {
           
