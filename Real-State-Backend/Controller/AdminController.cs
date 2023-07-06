@@ -15,6 +15,9 @@ namespace Real_State_Backend.Controller
             _adminService = adminService;
         }
 
+
+
+        [Route("/GetAllUsers")]
         [HttpGet]
         public async Task<List<User>> GetAllUsers()
         {
@@ -22,6 +25,7 @@ namespace Real_State_Backend.Controller
             return result;
         }
 
+        [Route("/GetUserById")]
         [HttpGet]
         public async Task<User> GetUserById(string? id)
         {
