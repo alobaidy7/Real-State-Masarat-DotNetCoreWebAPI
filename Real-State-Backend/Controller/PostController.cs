@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Real_State_Backend.DTO;
 using Real_State_Backend.Interfaces;
 using Real_State_Backend.Services;
 
@@ -34,6 +35,34 @@ namespace Real_State_Backend.Controller
 
             return Ok(post);
         }
+        [HttpPost]
+        [Route("/api/createpost")]
+        public IActionResult AddPost([FromBody] PostDTO postDTO)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(postDTO.Title)
+                    || postDTO.Price == 0
+                    || string.IsNullOrEmpty(postDTO.Area)
+                    || string.IsNullOrEmpty(postDTO.Description)
+                    || string.IsNullOrEmpty(postDTO.Location)
+                    || string.IsNullOrEmpty(postDTO.UserId)
+                    )
+                {
+                    return BadRequest("{lease Fill Required Information (Title,Price,Area,Description,UserID,Location)."); 
+                }
+
+                var createdPost = _postservice.AddPost(postDTO);
+                return Ok(createdPost); 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred."); 
+            }
+        }
+
+
+
         [HttpDelete]
         [Route("/api/Delete")]
         public IActionResult DeletePost(int id)
