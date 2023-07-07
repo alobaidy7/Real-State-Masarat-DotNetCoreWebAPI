@@ -71,13 +71,16 @@ namespace Real_State_Backend.Services
         {
             var post = _context.Posts.FirstOrDefault(p => p.Id == id);
 
+            post.Id = id;
             post.Title = postDTO.Title;
             post.Description = postDTO.Description;
             post.Location = postDTO.Location;
             post.Status = postDTO.Status;
             post.Category = postDTO.Category;
             post.SubCategory = postDTO.SubCategory;
-            post.Id = id;
+            post.Price = postDTO.Price;
+            post.Area = postDTO.Area;
+            
 
             _context.Posts.Add(post);
             _context.Posts.Update(post);
