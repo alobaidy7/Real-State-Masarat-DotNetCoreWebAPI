@@ -76,7 +76,7 @@ namespace Real_State_Backend.Controller
         }
 
         [HttpPut]
-        [Route("/api/updateposts")]
+        [Route("/api/UpdatePosts")]
         public IActionResult updatePost(int id, PostDTO postDTO)
         {
             if (id == null)
