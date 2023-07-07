@@ -80,7 +80,7 @@ namespace Real_State_Backend.Services
             post.SubCategory = postDTO.SubCategory;
             post.Price = postDTO.Price;
             post.Area = postDTO.Area;
-            
+
 
             _context.Posts.Add(post);
             _context.Posts.Update(post);
