@@ -67,5 +67,24 @@ namespace Real_State_Backend.Services
             return _context.Posts.ToList();
         }
 
+        public Post UpdatePost(int id, PostDTO postDTO)
+        {
+            var post = _context.Posts.FirstOrDefault(p => p.Id == id);
+
+            post.Title = postDTO.Title;
+            post.Description = postDTO.Description;
+            post.Location = postDTO.Location;
+            post.Status = postDTO.Status;
+            post.Category = postDTO.Category;
+            post.SubCategory = postDTO.SubCategory;
+            post.Id = id;
+
+            _context.Posts.Add(post);
+            _context.Posts.Update(post);
+            _context.SaveChanges();
+
+            return post;
+        }
+
     }
 }

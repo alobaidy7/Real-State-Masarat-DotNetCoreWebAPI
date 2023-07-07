@@ -9,7 +9,8 @@ namespace Real_State_Backend.Interfaces
         public Post GetPostById(int id);
         public ICollection<Post> DeletePost(int id);
         public Post AddPost(PostDTO postDTO);
-        
+        public Post UpdatePost(int id, PostDTO postDTO);
+
 
 
     }

@@ -74,5 +74,24 @@ namespace Real_State_Backend.Controller
             var post= _postservice.DeletePost(id);
             return Ok(post);
         }
+
+        [HttpPut]
+        [Route("/api/updateposts")]
+        public IActionResult updatePost(int id, PostDTO postDTO)
+        {
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            var post = _postservice.UpdatePost(id, postDTO);
+
+            if (post == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(post);
+        }
     }
 }
