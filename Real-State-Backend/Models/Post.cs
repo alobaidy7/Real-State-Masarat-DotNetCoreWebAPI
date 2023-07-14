@@ -14,6 +14,7 @@ namespace Real_State_Backend.Models
         public bool? Status { get; set; }
         public string? Category { get; set; }
         public string? SubCategory { get; set; }
+        public string? ImageURL { get; set; }
            
         public ICollection<PostImage>? PostImages { get; set; }  
        

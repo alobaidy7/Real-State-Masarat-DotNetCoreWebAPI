@@ -45,6 +45,7 @@ namespace Real_State_Backend.Services
                 UserId= postDTO.UserId,
                 Description = postDTO.Description,
                 Location = postDTO.Location,
+                ImageURL = postDTO.ImageURL,    
                 Status = postDTO.Status,
                 Category = postDTO.Category,
                 SubCategory = postDTO.SubCategory,

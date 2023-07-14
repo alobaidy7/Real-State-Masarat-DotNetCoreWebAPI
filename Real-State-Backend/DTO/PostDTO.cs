@@ -14,6 +14,7 @@ namespace Real_State_Backend.DTO
         public string? Category { get; set; }
         public string? SubCategory { get; set; }
         public string? UserId { get; set; }
+        public string? ImageURL { get; set; }
 
 
 

@@ -47,6 +47,7 @@ namespace Real_State_Backend.Controller
                     || string.IsNullOrEmpty(postDTO.Description)
                     || string.IsNullOrEmpty(postDTO.Location)
                     || string.IsNullOrEmpty(postDTO.UserId)
+                    || string.IsNullOrEmpty(postDTO.ImageURL)
                     )
                 {
                     return BadRequest("Please Fill all The Required Information (Title,Price,Area,Description,UserID,Location)."); 
