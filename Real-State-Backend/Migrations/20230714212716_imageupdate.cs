@@ -5,7 +5,7 @@
 namespace Real_State_Backend.Migrations
 {
     /// <inheritdoc />
-    public partial class imageupdate : Migration
+    public partial class Imageupdate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

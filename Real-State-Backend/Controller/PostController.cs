@@ -56,7 +56,7 @@ namespace Real_State_Backend.Controller
                 var createdPost = _postservice.AddPost(postDTO);
                 return Ok(createdPost); 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return StatusCode(500, "An error occurred."); 
             }
@@ -68,7 +68,7 @@ namespace Real_State_Backend.Controller
         [Route("/api/Delete")]
         public IActionResult DeletePost(int id)
         {
-            if(id==null)
+            if(id == null)
             {
                 return NotFound();
             }

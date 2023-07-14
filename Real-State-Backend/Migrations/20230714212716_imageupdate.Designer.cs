@@ -13,7 +13,7 @@ namespace Real_State_Backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230714212716_imageupdate")]
-    partial class imageupdate
+    partial class Imageupdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
