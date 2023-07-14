@@ -18,25 +18,39 @@ namespace Real_State_Backend.Controller
 
         [Route("/register")]
         [HttpPost]
-        public async Task<UserResponse> RegisterUser(RegisterDTO user)
+        public async Task<IActionResult> RegisterUser(RegisterDTO user)
         {
-            //if (user == null)
-            //{
+            if (user == null || user.FullName == null || user.MobileNumber == null || user.Email ==null || user.Password == null)
+            {
+                return BadRequest();
+            }
 
-            //}
+            var result = await _authService.RegisterUser(user);
 
-            return await _authService.RegisterUser(user);
+            if (!result.IsSuccess)
+            {
+                return BadRequest();
+
+            }
+
+            return Ok(result);
         }
         [Route("/Login")]
         [HttpPost]
-        public async Task<UserResponse> LoginUser(LoginDTO login)
+        public async Task<IActionResult> LoginUser(LoginDTO login)
         {
-            //if (user == null)
-            //{
+            if (login == null || login.Email==null || login.Password == null)
+            {
+                return BadRequest();
+            }
+            var result = await _authService.LoginUser(login);
 
-            //}
+            if(result.IsSuccess == false)
+            {
+                return BadRequest();
+            }
 
-            return await _authService.LoginUser(login);
+            return Ok(result);
         }
     }
 }
